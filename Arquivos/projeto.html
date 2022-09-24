@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Levantamento Sistemático da Produção Agrícola!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>MENU!</button>
+  <span class="w3-bar-item w3-left">OS IMPACTOS DA PANDEMIA NO SETOR AGRONÔMICO DO BRASIL!</span>
+</div>
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-col s8 w3-bar">
+    <span><strong><center>Seja bem-vindo!</center></strong></span><br>
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+    <a href="projeto.html" class="w3-bar-item w3-button w3-padding w3-blue">O PROJETO</a>
+    <a href="referencias.html" class="w3-bar-item w3-button w3-padding w3-blue">REFERÊNCIAS BIBLIOGRÁFICAS</a>
+  </div>
+</nav>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-twothird">
+        <h5>OBJETIVOS DO PROJETO:</h5>
+        <table class="w3-table w3-striped w3-white">
+          <tr>
+            <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+            <td>De que modo a pandemia afetou a produção agrícola e o produtor?</td>
+          </tr>
+            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+            <td>Trazer à tona o debate da importância do pequeno produtor;</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+            <td>A importância da Agricultura no PIB brasileiro; e</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+            <td>Compartilhar os resultados obtidos!</td>  
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>PROCEDIMENTOS METODOLÓGICOS:</h5>
+    <b><p align="justify">Primeiramente, acessamos o site oficial da API do IBGE.</p></b>
+    <img src="print1.png" height="500px" width="1000px">
+    <b><p align="justify">Já no site, acessamos as informações dos 'Dados Agregados'.</p></b>
+     <img src="print2.png" height="500px" width="1000px">
+     <b><p align="justify">Ao fim da página, criamos um link personalizado da nossa API, via 'Query Builder', onde selecionamos a opção: 'Levantamento de Dados Sistemáticos da Produção Agrícola'. Foi gerada uma estrutura de dados em .JSON, onde realizamos a extração dos dados.</p></b>
+     <video controls>
+      <source src="CriandoAPI.mp4" type="video/mp4">
+    </video>
+    <b><p align="justify">Após, criamos um script/programa em Python, onde importamos as bibliotecas necessárias.</p></b>
+      <img src="print3.png" height="250px" width="1000px">
+      <P align="justify">Atrubuímos o link da API à uma variável chamada 'Dados'.
+      Criamos outras duas variáveis: 'Linha', e 'Coluna'.
+      Foi ali que começamos a extração dos dados da API, percorrendo suas posições e atribuíndo à variável 'Linha'. A variável 'Coluna' é uma string criada para organizarmos as informações de acordo com os produtos/alimentos escolhidos.</p>
+      <b><p align="justify">Finalizado, o próprio script/programa (com as bibliotecas importadas) gerou um arquivo .xlsx (planilha eletrônica) e o utilizamos para gerar as informações de gráficos no site Datawrapper.</p></b>
+      <img src="datawrapper.PNG" height="500px" width="1000px">
+  <div class="w3-container">
+    <h5>GRÁFICOS POR ANO:</h5>
+    <center>
+    <select onchange="document.getElementById('preview').src = this.value">
+      <option selected disabled>Escolha um gráfico:</option>
+      <option value="Graficos2019.png">2019</option>
+      <option value="2020Grafico.png">2020</option>
+      <option value="2021Grafico.png">2021</option>
+    </select>
+    <br>
+    <img id="preview" height="336px" width="339px">
+  </center>
+  </div>
+  <div class="w3-container">
+    <h5>CONCLUSÃO:</h5>
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="logo.png" style="width:160px;height:140px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <p align="justify">O projeto demonstra, então, que a pandemia não influenciou na produção geral de alimentos, que se manteve estável durante o período da pandemia (2019-2021). Contudo, esteve diretamente ligada a instabilidade econômica causada pela alta do dólar, o que beneficiou os grandes produtores que, em sua maioria, praticam a agricultura de exportação. Por outro lado, a pandemia causou a redução do consumo de produtos no mercado interno de frutas e hortaliças, o que prejudicou o pequeno produtor responsável por ⅔ da produção.
+        <p align="justify">A importância do pequeno produtor se dá, justamente, pelo fato de cultivar para o seu uso próprio ou uso para o mercado interno. Como já dito anteriormente, a alta do dólar impactou em diversos produtos produzidos pelo pequeno produtor, fazendo com que o acesso para a população ficasse cada vez menor, chegando ao ponto do consumo ser reduzido, seja por muitos dos compradores suspenderam as compras ou até mesmo o acesso aos espaços usuais de venda (feiras livres e outros) serem proibidos.</p>
+        <p align="justify">O potencial do pequeno produtor não é comparado aos grandes produtores que, como já dito também, praticam a agricultura de exportação e que, por sua vez, conseguiram se manter estáveis e se sobressaindo durante o período e aproveitando melhor essa alta do dólar.</p>
+        <p align="justify">Além disso, houve um aumento na participação da agricultura no PIB (que compõe uma parte considerável do PIB total brasileiro), devido a alta do dólar que beneficiou as exportações e os grandes produtores voltados ao mercado externo. Portanto, o projeto demonstra que a pandemia não influenciou na produção de alimentos e sim no mercado interno e externo, o que prejudicou o pequeno produtor e beneficiou o grandes produtor.</p>
+        </p><br>
+      </div>
+    </div>
+  <br>
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <p align="justify">Por: Gabriel Stroeher, Guilherme Ledur e Nícolas Silva, do IFRS Campus Feliz!</p>
+  </footer>
+</div>
+<script>
+var mySidebar = document.getElementById("mySidebar");
+var overlayBg = document.getElementById("myOverlay");
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+</body>
+</html>
